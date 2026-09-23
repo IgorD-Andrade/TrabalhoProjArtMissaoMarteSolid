@@ -12,6 +12,7 @@ Refatoração do jogo de console *Missão Marte Unifor* (`src/exercicio10`) apli
 | [`REVISAO-SOLID.md`](REVISAO-SOLID.md) | Revisão crítica: observações por princípio, concordâncias, discordâncias, testes e prioridades |
 | [`docs/uml/`](docs/uml/) | Diagramas UML (fonte `.puml` + imagem `.png`) |
 | [`docs/evidencias/`](docs/evidencias/) | Saídas reais das execuções (original e refatorado) e dos testes |
+| [`docs/ROTEIRO-APRESENTACAO.md`](docs/ROTEIRO-APRESENTACAO.md) | Roteiro da apresentação e perguntas prováveis |
 | [`src/README.md`](src/README.md) | Tutorial do professor usado como referência |
 
 ---
