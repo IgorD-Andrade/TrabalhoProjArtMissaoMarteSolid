@@ -1,0 +1,339 @@
+### Comando: java -cp out solidexercicio10.Main --seed 1
+### Entrada digitada (uma por linha): 1|Bia|dificil|2||a|s|d|w|a|s|d|w|a|s|d|w|a|s|d|w|a|s|d|w|a|s|d|w|4
+
+================================================================
+             MISSÃO MARTE UNIFOR - VERSÃO SOLID                 
+================================================================
+  Pilote sua nave, salve os passageiros e desvie dos perigos!   
+================================================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+Digite o nome do piloto: Escolha a Dificuldade (facil/medio/dificil): Tamanho do mapa (2 a 20, ex: 5 para mapa de -5 a +5): 
+Iniciando missão na dificuldade Difícil...
+Pressione Enter para decolar!
+Mapa da Missão (Pontos: 15) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  .  .  X  P  T
+ -1|  .  .  X  #  .
+  0|  .  E  @  X  .
+  1|  .  .  #  E  .
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (0,0) | Pontos: 15 | Vidas: 3 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): 
+Mapa da Missão (Pontos: 14) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  .  .  X  P  T
+ -1|  .  .  X  #  .
+  0|  .  @  L  .  .
+  1|  .  .  #  E  .
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (-1,0) | Pontos: 14 | Vidas: 3 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): 
+Mapa da Missão (Pontos: 13) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  .  X  X  P  T
+ -1|  .  .  .  #  .
+  0|  .  E  L  .  .
+  1|  .  @  #  E  X
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (-1,1) | Pontos: 13 | Vidas: 3 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): Alerta! Colisão detectada! Vidas restantes: 2
+
+Mapa da Missão (Pontos: 12) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  X  X  .  P  T
+ -1|  .  .  .  #  .
+  0|  .  E  L  .  .
+  1|  .  .  @  E  X
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (0,1) | Pontos: 12 | Vidas: 2 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): 
+Mapa da Missão (Pontos: 11) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  X  X  .  P  T
+ -1|  .  .  .  #  .
+  0|  .  E  @  .  X
+  1|  .  .  #  E  .
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (0,0) | Pontos: 11 | Vidas: 2 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): 
+Mapa da Missão (Pontos: 10) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  X  X  .  P  T
+ -1|  .  .  .  #  .
+  0|  .  @  L  .  .
+  1|  .  .  #  E  X
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (-1,0) | Pontos: 10 | Vidas: 2 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): 
+Mapa da Missão (Pontos: 9) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  X  X  .  P  T
+ -1|  .  .  .  #  .
+  0|  .  E  L  .  .
+  1|  .  @  #  E  X
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (-1,1) | Pontos: 9 | Vidas: 2 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): Alerta! Colisão detectada! Vidas restantes: 1
+
+Mapa da Missão (Pontos: 8) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  X  .  .  P  T
+ -1|  .  X  .  #  .
+  0|  .  E  L  .  .
+  1|  .  .  @  E  X
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (0,1) | Pontos: 8 | Vidas: 1 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): 
+Mapa da Missão (Pontos: 7) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  X  X  .  P  T
+ -1|  .  .  .  #  .
+  0|  .  E  @  .  .
+  1|  .  .  #  E  X
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (0,0) | Pontos: 7 | Vidas: 1 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): 
+Mapa da Missão (Pontos: 6) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  X  X  .  P  T
+ -1|  .  .  .  #  .
+  0|  .  @  L  .  .
+  1|  .  .  #  E  .
+  2|  .  #  .  .  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (-1,0) | Pontos: 6 | Vidas: 1 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): 
+Mapa da Missão (Pontos: 5) - Piloto: Bia
+     -2 -1  0  1  2
+     __ __ __ __ __
+ -2|  .  X  .  P  T
+ -1|  X  .  .  #  .
+  0|  .  E  L  .  .
+  1|  .  @  #  E  .
+  2|  .  #  .  X  P
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (1,-2)
+ - Eng. Rosa (Engenheiro) em (1,1)
+ - Dr. Lima (Professor) em (2,2)
+ - Eng. Carlos (Engenheiro) em (-1,0)
+ - Ast. Maria (Astronauta) em (2,-2)
+Nave em (-1,1) | Pontos: 5 | Vidas: 1 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): GAME OVER! A nave foi destruída.
+Estatísticas da Partida (derrota):
+ - Pontuação Final: 4 pontos
+ - Movimentos Efetuados: 11
+ - Tempo de Jogo: 0 segundos
+ - Passageiros Resgatados: 0
+ - Vidas Restantes: 0
+================================================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+Obrigado por jogar a Missão Marte Unifor!

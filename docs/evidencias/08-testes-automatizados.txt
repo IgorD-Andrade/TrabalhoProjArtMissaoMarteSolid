@@ -1,0 +1,43 @@
+### Comando: java -cp out solidexercicio10.ExecutarTestes
+
+[OK]    LSP: subclasses usadas como Passageiro mantêm o contrato (10/15/20)
+[OK]    Dificuldade: conversão de texto com acento, caixa e valor inválido
+[OK]    Dificuldade: parâmetros e tamanho mínimo de mapa
+[OK]    Nave: capacidade de 5 passageiros
+[OK]    Nave: 3 vidas e nunca negativa
+[OK]    Missao: nave não sai do mapa
+[OK]    Missao: inimigo aleatório nunca sai do mapa (10.000 turnos)
+[OK]    Missao: rejeita entidade fora do mapa ou em posição ocupada
+[OK]    Missao: prioridade de desenho igual ao original
+[OK]    Missao: embarque remove passageiro da superfície
+[OK]    Missao: colisão com asteroide e com inimigo
+[OK]    Partida: movimento custa 1 ponto, inclusive contra a borda
+[OK]    Partida: embarque soma a pontuação polimórfica
+[OK]    Partida: embarcar sem passageiro não altera pontos
+[OK]    Partida: nave cheia recusa embarque
+[OK]    Partida: vitória só com todos resgatados E na plataforma (0,0)
+[OK]    Partida: colisões tiram vidas até o Game Over
+[OK]    Partida: pontuação zerada encerra com derrota
+[OK]    Partida: abortar encerra e bloqueia novos comandos
+[OK]    GeradorMissao: quantidades por dificuldade, sem sobreposição
+[OK]    GeradorMissao: mapa pequeno falha rápido (original travava)
+[OK]    GeradorMissao: rotação de tipos igual ao original
+[OK]    OCP: novo passageiro (Médico) funciona sem alterar código existente
+[OK]    JogoService: piloto vazio vira 'Piloto Anônimo'
+[OK]    JogoService: vitória é registrada com data/hora, dificuldade e passageiros
+[OK]    JogoService: derrota e missão abortada não entram no ranking
+[OK]    JogoService: ranking limitado ao Top 5 em ordem decrescente
+[OK]    JogoService: resetar ranking
+[OK]    DIP: mesmo serviço funciona com repositório em memória e em JSON
+[OK]    JSON: salvar e carregar preserva todos os campos (nome com vírgula e aspas)
+[OK]    JSON: arquivo inexistente ou vazio resulta em ranking vazio
+[OK]    JSON: arquivo corrompido não quebra e é preservado ao salvar
+[OK]    JSON: lê arquivo no formato do exercício 10
+[OK]    JSON: limpar remove o arquivo
+[OK]    Console: menu, ranking vazio, reset com confirmação, opção inválida e sair
+[OK]    Console: reset cancelado mantém o ranking
+[OK]    Console: entradas inválidas usam padrões (dificuldade e mapa)
+[OK]    Console: fim da entrada no meio da partida não lança exceção
+[OK]    Console: partida completa até a vitória, Top 5 e ranking
+
+39 testes, 39 sucesso(s), 0 falha(s)

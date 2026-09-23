@@ -1,0 +1,74 @@
+### Comando: java -cp out solidexercicio10.Main (nova execução, mesmo arquivo)
+### Entrada digitada (uma por linha): 2|3|n|2|3|s|2|3|s|4
+
+================================================================
+             MISSÃO MARTE UNIFOR - VERSÃO SOLID                 
+================================================================
+  Pilote sua nave, salve os passageiros e desvie dos perigos!   
+================================================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+====== RANKING TOP 5 PILOTOS ======
+1. Igor - 70 pts | Dificuldade: Médio | Coletados: 5 | Tempo: 0s | 2026-09-22 21:36:40
+===================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Você realmente deseja limpar o histórico de ranking? (s/n): Operação cancelada.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+====== RANKING TOP 5 PILOTOS ======
+1. Igor - 70 pts | Dificuldade: Médio | Coletados: 5 | Tempo: 0s | 2026-09-22 21:36:40
+===================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Você realmente deseja limpar o histórico de ranking? (s/n): Ranking resetado com sucesso!
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+====== RANKING TOP 5 PILOTOS ======
+ - Nenhum registro encontrado. Seja o primeiro a jogar!
+===================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Você realmente deseja limpar o histórico de ranking? (s/n): Ranking resetado com sucesso!
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+Obrigado por jogar a Missão Marte Unifor!

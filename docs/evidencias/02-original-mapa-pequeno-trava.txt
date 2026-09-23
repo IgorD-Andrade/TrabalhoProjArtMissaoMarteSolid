@@ -1,0 +1,4 @@
+### Comando: timeout 5 java -cp out exercicio10.Main
+### Entrada digitada (uma por linha): 1|Igor|medio|1||q|4
+
+Código de saída: 124 (124 = processo encerrado pelo timeout após 5 s: o jogo travou gerando a missão)

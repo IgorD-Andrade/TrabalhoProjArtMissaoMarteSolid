@@ -1,0 +1,136 @@
+### Comando: java -cp out solidexercicio10.Main --seed 3
+### Entrada digitada (uma por linha): 1||xyz|1||q|1|Ana|dificil|abc||x|q|7|4
+
+================================================================
+             MISSÃO MARTE UNIFOR - VERSÃO SOLID                 
+================================================================
+  Pilote sua nave, salve os passageiros e desvie dos perigos!   
+================================================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+Digite o nome do piloto: Escolha a Dificuldade (facil/medio/dificil): Tamanho do mapa (2 a 20, ex: 5 para mapa de -5 a +5): Tamanho fora do intervalo para Médio, usando tamanho padrão (5).
+
+Iniciando missão na dificuldade Médio...
+Pressione Enter para decolar!
+Mapa da Missão (Pontos: 20) - Piloto: Piloto Anônimo
+     -5 -4 -3 -2 -1  0  1  2  3  4  5
+     __ __ __ __ __ __ __ __ __ __ __
+ -5|  .  .  .  .  .  .  .  .  .  .  .
+ -4|  .  P  .  .  .  .  .  .  .  P  .
+ -3|  .  .  .  .  .  .  .  .  .  .  .
+ -2|  .  .  .  .  .  .  .  .  .  E  .
+ -1|  .  .  .  E  .  .  .  #  .  .  .
+  0|  .  .  .  .  .  @  .  .  .  .  #
+  1|  .  .  .  .  .  .  .  .  .  .  .
+  2|  .  .  .  X  .  .  .  X  .  .  .
+  3|  .  T  .  .  .  .  .  .  .  .  .
+  4|  .  .  .  .  .  .  .  .  .  .  .
+  5|  .  .  .  .  .  .  .  .  .  .  .
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (-4,-4)
+ - Eng. Rosa (Engenheiro) em (4,-2)
+ - Dr. Lima (Professor) em (4,-4)
+ - Eng. Carlos (Engenheiro) em (-2,-1)
+ - Ast. Maria (Astronauta) em (-4,3)
+Nave em (0,0) | Pontos: 20 | Vidas: 3 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): Missão abortada pelo piloto.
+Estatísticas da Partida (abortada):
+ - Pontuação Final: 20 pontos
+ - Movimentos Efetuados: 0
+ - Tempo de Jogo: 0 segundos
+ - Passageiros Resgatados: 0
+ - Vidas Restantes: 3
+================================================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+Digite o nome do piloto: Escolha a Dificuldade (facil/medio/dificil): Tamanho do mapa (2 a 20, ex: 5 para mapa de -5 a +5): Entrada inválida, usando tamanho padrão (5).
+
+Iniciando missão na dificuldade Difícil...
+Pressione Enter para decolar!
+Mapa da Missão (Pontos: 15) - Piloto: Ana
+     -5 -4 -3 -2 -1  0  1  2  3  4  5
+     __ __ __ __ __ __ __ __ __ __ __
+ -5|  .  .  .  .  .  .  X  .  .  P  .
+ -4|  .  .  .  .  .  .  .  .  X  .  .
+ -3|  .  .  .  .  .  .  .  .  .  .  .
+ -2|  .  .  #  .  .  .  .  .  .  .  .
+ -1|  .  .  .  .  .  .  .  .  .  .  X
+  0|  #  .  .  .  .  @  .  .  .  T  .
+  1|  .  .  .  .  .  .  .  .  .  .  .
+  2|  .  .  .  .  .  P  .  .  .  .  .
+  3|  E  .  .  .  .  E  .  .  .  .  .
+  4|  .  .  .  .  .  .  .  .  .  .  .
+  5|  .  .  .  #  .  .  .  .  .  .  .
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (0,2)
+ - Eng. Rosa (Engenheiro) em (-5,3)
+ - Dr. Lima (Professor) em (4,-5)
+ - Eng. Carlos (Engenheiro) em (0,3)
+ - Ast. Maria (Astronauta) em (4,0)
+Nave em (0,0) | Pontos: 15 | Vidas: 3 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): Comando inválido.
+
+Mapa da Missão (Pontos: 15) - Piloto: Ana
+     -5 -4 -3 -2 -1  0  1  2  3  4  5
+     __ __ __ __ __ __ __ __ __ __ __
+ -5|  .  .  .  .  .  .  X  .  .  P  .
+ -4|  .  .  .  .  .  .  .  .  X  .  .
+ -3|  .  .  .  .  .  .  .  .  .  .  .
+ -2|  .  .  #  .  .  .  .  .  .  .  .
+ -1|  .  .  .  .  .  .  .  .  .  .  X
+  0|  #  .  .  .  .  @  .  .  .  T  .
+  1|  .  .  .  .  .  .  .  .  .  .  .
+  2|  .  .  .  .  .  P  .  .  .  .  .
+  3|  E  .  .  .  .  E  .  .  .  .  .
+  4|  .  .  .  .  .  .  .  .  .  .  .
+  5|  .  .  .  #  .  .  .  .  .  .  .
+Legenda: @=Nave, P=Professor, E=Engenheiro, T=Astronauta, #=Asteroide, X=Inimigo, L=Plataforma de Pouso, .=Vazio
+Comandos: w/s/a/d (mover), c (embarcar), q (sair)
+Passageiros na superfície marciana:
+ - Dr. Silva (Professor) em (0,2)
+ - Eng. Rosa (Engenheiro) em (-5,3)
+ - Dr. Lima (Professor) em (4,-5)
+ - Eng. Carlos (Engenheiro) em (0,3)
+ - Ast. Maria (Astronauta) em (4,0)
+Nave em (0,0) | Pontos: 15 | Vidas: 3 | A bordo: 0/5 | Restantes: 5
+Comando (w/s/a/d/c/q): Missão abortada pelo piloto.
+Estatísticas da Partida (abortada):
+ - Pontuação Final: 15 pontos
+ - Movimentos Efetuados: 0
+ - Tempo de Jogo: 0 segundos
+ - Passageiros Resgatados: 0
+ - Vidas Restantes: 3
+================================================================
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: Opção inválida. Tente novamente.
+
+--- MENU PRINCIPAL ---
+1. Iniciar Nova Missão
+2. Visualizar Ranking Top 5
+3. Resetar Histórico de Ranking
+4. Sair do Jogo
+----------------------
+Escolha uma opção: 
+Obrigado por jogar a Missão Marte Unifor!
