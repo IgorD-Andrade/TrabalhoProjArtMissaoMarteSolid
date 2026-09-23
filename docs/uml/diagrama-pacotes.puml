@@ -1,0 +1,62 @@
+@startuml diagrama-pacotes
+title Missão Marte Unifor (versão SOLID) — Diagrama de pacotes\n(seta tracejada = "depende de", apontando para o elemento usado)
+
+skinparam shadowing false
+skinparam packageStyle folder
+skinparam nodesep 50
+skinparam ranksep 60
+hide empty members
+hide circle
+
+package "solidexercicio10\n(Main — raiz de composição)" as raiz {
+}
+
+package "solidexercicio10.presentation\n(JogoConsole, Terminal,\nMapaRenderer, PainelInformacoes)" as presentation {
+}
+
+package "solidexercicio10.service\n(JogoService, Partida, GeradorMissao,\nFabricaPassageiro, Comando, EventoTurno,\nResultadoTurno, EstadoPartida)" as service {
+}
+
+package "solidexercicio10.repository" as repository {
+  interface RankingRepository <<interface>>
+  class JsonRankingRepository
+  class RankingEmMemoria
+  class RankingEntry
+  class RankingJson <<package-private>>
+  class RankingPersistenciaException
+}
+
+package "solidexercicio10.model\n(EntidadeMapa, Posicionavel, Movel, Passageiro e\nsubclasses, Nave, Asteroide, Inimigo, PlataformaPouso,\nMissao, Mapa, Dificuldade, Direcao)" as model {
+}
+
+raiz ..> presentation : cria
+raiz ..> service : cria
+raiz ..> JsonRankingRepository : <<cria>> única referência\nà implementação concreta
+
+presentation ..> service : chama casos de uso
+presentation ..> RankingEntry : exibe
+presentation ..> RankingPersistenciaException : trata falha
+
+service ..> RankingRepository : <<usa>> (DIP)
+service ..> RankingEntry
+
+JsonRankingRepository ..|> RankingRepository
+RankingEmMemoria ..|> RankingRepository
+JsonRankingRepository ..> RankingJson
+
+presentation ..> model : lê estado
+service ..> model : regras
+repository ..> model : Dificuldade
+raiz ..> model : fábricas
+
+note right of RankingRepository
+  O serviço conhece apenas o contrato.
+  Trocar JSON por banco de dados ou por
+  memória altera somente o Main.
+end note
+
+note bottom of model
+  Não depende de nenhum outro pacote:
+  é o núcleo estável do sistema.
+end note
+@enduml

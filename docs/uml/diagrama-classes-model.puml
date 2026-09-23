@@ -1,0 +1,171 @@
+@startuml diagrama-classes-model
+title Missão Marte Unifor (versão SOLID) — Diagrama de classes do pacote solidexercicio10.model
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+hide empty members
+
+package solidexercicio10.model {
+
+  interface Posicionavel <<interface>> {
+    + getX() : int
+    + getY() : int
+    + estaEm(x : int, y : int) : boolean
+    + mesmaPosicaoQue(outro : Posicionavel) : boolean
+  }
+
+  interface Movel <<interface>> {
+    + mover(dx : int, dy : int) : void
+  }
+
+  abstract class EntidadeMapa {
+    - x : int
+    - y : int
+    # EntidadeMapa(x : int, y : int)
+    + getX() : int
+    + getY() : int
+    # deslocar(dx : int, dy : int) : void
+    + {abstract} getSimbolo() : char
+  }
+
+  abstract class Passageiro {
+    - nome : String
+    + getNome() : String
+    + {abstract} getTipo() : String
+    + {abstract} getPontuacao() : int
+  }
+
+  class Professor {
+    + getTipo() : String
+    + getPontuacao() : int  <<10>>
+    + getSimbolo() : char  <<'P'>>
+  }
+
+  class Engenheiro {
+    + getTipo() : String
+    + getPontuacao() : int  <<15>>
+    + getSimbolo() : char  <<'E'>>
+  }
+
+  class Astronauta {
+    + getTipo() : String
+    + getPontuacao() : int  <<20>>
+    + getSimbolo() : char  <<'T'>>
+  }
+
+  class Nave {
+    + {static} CAPACIDADE_PADRAO : int = 5
+    + {static} VIDAS_INICIAIS : int = 3
+    - id : String
+    - capacidade : int
+    - vidas : int
+    + embarcar(p : Passageiro) : boolean
+    + estaCheia() : boolean
+    + perderVida() : void
+    + estaDestruida() : boolean
+    + getPassageiros() : List<Passageiro>
+    + getQuantidadeABordo() : int
+    + mover(dx : int, dy : int) : void
+    + getSimbolo() : char  <<'@'>>
+  }
+
+  class Asteroide {
+    + getSimbolo() : char  <<'#'>>
+  }
+
+  class Inimigo {
+    + mover(dx : int, dy : int) : void
+    + getSimbolo() : char  <<'X'>>
+  }
+
+  class PlataformaPouso {
+    + getSimbolo() : char  <<'L'>>
+  }
+
+  class Mapa <<final>> {
+    - tamanho : int
+    + getMinX() / getMaxX() : int
+    + getMinY() / getMaxY() : int
+    + contem(x : int, y : int) : boolean
+    + getQuantidadeCelulas() : int
+  }
+
+  class Missao {
+    + adicionarPassageiro(p : Passageiro) : void
+    + adicionarAsteroide(a : Asteroide) : void
+    + adicionarInimigo(i : Inimigo) : void
+    + posicaoLivre(x : int, y : int) : boolean
+    + entidadeEm(x : int, y : int) : Optional<EntidadeMapa>
+    + passageiroNaPosicaoDaNave() : Optional<Passageiro>
+    + embarcar(p : Passageiro) : boolean
+    + moverNave(d : Direcao) : boolean
+    + moverInimigos(random : Random) : void
+    + naveColidiu() : boolean
+    + todosResgatados() : boolean
+    + naveNaPlataforma() : boolean
+  }
+
+  enum Dificuldade <<enumeration>> {
+    FACIL
+    MEDIO
+    DIFICIL
+    --
+    - rotulo : String
+    - pontuacaoInicial : int
+    - quantidadePassageiros : int
+    - quantidadeAsteroides : int
+    - quantidadeInimigos : int
+    --
+    + getTotalEntidades() : int
+    + getTamanhoMinimoMapa() : int
+    + {static} deString(valor : String) : Dificuldade
+  }
+
+  enum Direcao <<enumeration>> {
+    CIMA
+    BAIXO
+    ESQUERDA
+    DIREITA
+    --
+    + getDx() : int
+    + getDy() : int
+  }
+}
+
+' ---------------- herança e realização
+EntidadeMapa ..|> Posicionavel
+EntidadeMapa <|-- Passageiro
+Passageiro <|-- Professor
+Passageiro <|-- Engenheiro
+Passageiro <|-- Astronauta
+EntidadeMapa <|-- Nave
+EntidadeMapa <|-- Asteroide
+EntidadeMapa <|-- Inimigo
+EntidadeMapa <|-- PlataformaPouso
+Nave ..|> Movel
+Inimigo ..|> Movel
+
+' ---------------- associações
+Missao *-- "1" Mapa : limites
+Missao *-- "1" Nave : nave
+Missao *-- "1" PlataformaPouso : em (0,0)
+Missao o-- "0..*" Passageiro : na superfície
+Missao *-- "0..*" Asteroide
+Missao *-- "0..*" Inimigo
+Nave o-- "0..5" Passageiro : a bordo
+Missao .up.> Direcao : usa
+Dificuldade .up.> Mapa : calcula\ntamanho mínimo
+
+note bottom of Passageiro
+  LSP: toda subclasse devolve pontuação positiva
+  e fixa, tipo e símbolo próprios. Quem usa
+  Passageiro nunca consulta a classe concreta.
+end note
+
+note right of Movel
+  ISP: separada de Posicionavel porque
+  Asteroide, Passageiro e PlataformaPouso
+  não se movem.
+end note
+@enduml
