@@ -1,7 +1,9 @@
 package solidexercicio10.presentation;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import solidexercicio10.model.Dificuldade;
 import solidexercicio10.repository.RankingEntry;
 import solidexercicio10.repository.RankingPersistenciaException;
@@ -65,7 +67,7 @@ public class JogoConsole {
     private void jogarPartida() {
         String piloto = terminal.lerLinha("\nDigite o nome do piloto: ").orElse("");
         Dificuldade dificuldade = Dificuldade.deString(
-                terminal.lerLinha("Escolha a Dificuldade (facil/medio/dificil): ").orElse("medio"));
+                terminal.lerLinha("Escolha a Dificuldade (" + opcoesDificuldade() + "): ").orElse("medio"));
         int tamanho = lerTamanhoMapa(dificuldade);
 
         painel.mensagem("\nIniciando missão na dificuldade " + dificuldade + "...");
@@ -83,6 +85,13 @@ public class JogoConsole {
             painel.resultadoTurno(resultado, partida);
         }
         finalizarPartida(partida);
+    }
+
+    /** Gerado a partir do enum: uma nova dificuldade aparece aqui sem editar esta classe. */
+    private static String opcoesDificuldade() {
+        return Arrays.stream(Dificuldade.values())
+                .map(d -> d.name().toLowerCase())
+                .collect(Collectors.joining("/"));
     }
 
     private Optional<Comando> lerComando() {
