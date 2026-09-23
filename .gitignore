@@ -1,0 +1,16 @@
+# Java compilado
+*.class
+
+# Diretorios de compilacao
+out/
+bin/
+target/
+
+# Arquivos locais gerados pelo jogo
+ranking.json
+ranking-solid-exercicio10.json
+
+# Configuracoes locais de IDE
+.vscode/
+.idea/
+*.iml
