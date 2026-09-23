@@ -7,7 +7,7 @@ import java.util.Map;
  * Executa todos os testes automatizados.
  *
  * <pre>
- * javac -d out $(find src/solidexercicio10 test/solidexercicio10 -name "*.java")
+ * javac -encoding UTF-8 -d out $(find src/solidexercicio10 test/solidexercicio10 -name "*.java")
  * java -cp out solidexercicio10.ExecutarTestes
  * </pre>
  */

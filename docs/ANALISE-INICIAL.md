@@ -3,7 +3,7 @@
 Análise feita **antes** da refatoração, a partir da compilação e execução do jogo original.
 
 ```bash
-javac -d out src/exercicio10/*.java
+javac -encoding UTF-8 -d out src/exercicio10/*.java
 java -cp out exercicio10.Main
 ```
 

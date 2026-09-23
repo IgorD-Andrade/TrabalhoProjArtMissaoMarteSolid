@@ -60,6 +60,9 @@ package solidexercicio10.model {
     - id : String
     - capacidade : int
     - vidas : int
+    + getId() : String
+    + getCapacidade() : int
+    + getVidas() : int
     + embarcar(p : Passageiro) : boolean
     + estaCheia() : boolean
     + perderVida() : void
@@ -85,6 +88,7 @@ package solidexercicio10.model {
 
   class Mapa <<final>> {
     - tamanho : int
+    + getTamanho() : int
     + getMinX() / getMaxX() : int
     + getMinY() / getMaxY() : int
     + contem(x : int, y : int) : boolean
@@ -104,6 +108,12 @@ package solidexercicio10.model {
     + naveColidiu() : boolean
     + todosResgatados() : boolean
     + naveNaPlataforma() : boolean
+    + getMapa() : Mapa
+    + getNave() : Nave
+    + getPlataforma() : PlataformaPouso
+    + getPassageiros() : List<Passageiro>
+    + getAsteroides() : List<Asteroide>
+    + getInimigos() : List<Inimigo>
   }
 
   enum Dificuldade <<enumeration>> {
@@ -117,9 +127,14 @@ package solidexercicio10.model {
     - quantidadeAsteroides : int
     - quantidadeInimigos : int
     --
+    + getPontuacaoInicial() : int
+    + getQuantidadePassageiros() : int
+    + getQuantidadeAsteroides() : int
+    + getQuantidadeInimigos() : int
     + getTotalEntidades() : int
     + getTamanhoMinimoMapa() : int
     + {static} deString(valor : String) : Dificuldade
+    + toString() : String
   }
 
   enum Direcao <<enumeration>> {

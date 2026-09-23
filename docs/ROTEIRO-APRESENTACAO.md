@@ -1,6 +1,6 @@
 # Roteiro da apresentação (≈ 10 min)
 
-Preparação: compilar as duas versões antes (`javac -d out src/exercicio10/*.java` e `javac -d out $(find src/solidexercicio10 test/solidexercicio10 -name "*.java")`) e apagar `ranking-solid-exercicio10.json`.
+Preparação: compilar as duas versões antes (`javac -encoding UTF-8 -d out src/exercicio10/*.java` e `javac -encoding UTF-8 -d out $(find src/solidexercicio10 test/solidexercicio10 -name "*.java")`) e apagar `ranking-solid-exercicio10.json`.
 
 | Tempo | Tópico | O que mostrar |
 |---|---|---|

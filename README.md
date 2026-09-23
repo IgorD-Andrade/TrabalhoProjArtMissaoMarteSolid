@@ -25,11 +25,11 @@ Requisito: **JDK 17 ou superior** (usa `switch` com `->` e `List.toList()`). Tod
 
 ```bash
 # versão original (para comparação)
-javac -d out src/exercicio10/*.java
+javac -encoding UTF-8 -d out src/exercicio10/*.java
 java -cp out exercicio10.Main
 
 # versão refatorada
-javac -d out $(find src/solidexercicio10 -name "*.java")
+javac -encoding UTF-8 -d out $(find src/solidexercicio10 -name "*.java")
 java -cp out solidexercicio10.Main
 
 # mesma partida sempre (útil para demonstração): semente fixa
@@ -39,19 +39,21 @@ java -cp out solidexercicio10.Main --seed 5
 ### Windows (PowerShell)
 
 ```powershell
-javac -d out src/exercicio10/*.java
+javac -encoding UTF-8 -d out src/exercicio10/*.java
 java -cp out exercicio10.Main
 
-javac -d out (Get-ChildItem -Recurse -Filter *.java src/solidexercicio10 | ForEach-Object FullName)
+javac -encoding UTF-8 -d out (Get-ChildItem -Recurse -Filter *.java src/solidexercicio10 | ForEach-Object FullName)
 java -cp out solidexercicio10.Main
 ```
 
+> O `-encoding UTF-8` é necessário no Windows com JDK 17: sem ele o `javac` usa o padrão `windows-1252` e **falha** ao compilar os emojis das mensagens (erro *unmappable character*). No Linux e no JDK 18+ ele é inofensivo.
+>
 > Se os acentos aparecerem como `?` no Windows, execute `chcp 65001` antes ou use `java -Dstdout.encoding=UTF-8 ...`.
 
 ### Testes automatizados (sem JUnit, sem dependências)
 
 ```bash
-javac -d out $(find src/solidexercicio10 test/solidexercicio10 -name "*.java")
+javac -encoding UTF-8 -d out $(find src/solidexercicio10 test/solidexercicio10 -name "*.java")
 java -cp out solidexercicio10.ExecutarTestes
 ```
 

@@ -10,8 +10,8 @@ Cada observação indica se foi **resolvida** na minha versão ou se continua **
 
 ## Como validei a solução
 
-- [x] compilação do código inicial — `javac -d out src/exercicio10/*.java` (sem erros)
-- [x] compilação da versão refatorada — `javac -Xlint:all -d out $(find src/solidexercicio10 -name "*.java")` (sem erros e sem avisos)
+- [x] compilação do código inicial — `javac -encoding UTF-8 -d out src/exercicio10/*.java` (sem erros)
+- [x] compilação da versão refatorada — `javac -encoding UTF-8 -Xlint:all -d out $(find src/solidexercicio10 -name "*.java")` (sem erros e sem avisos)
 - [x] início de uma missão — [evidência 03](docs/evidencias/03-refatorado-vitoria.txt)
 - [x] movimentação, embarque e conclusão da missão — [evidência 03](docs/evidencias/03-refatorado-vitoria.txt) (vitória com 5 passageiros e 70 pontos)
 - [x] consulta e reset do ranking — [evidência 04](docs/evidencias/04-refatorado-ranking-e-reset.txt) (inclui reset cancelado e reset com arquivo inexistente)
@@ -252,6 +252,8 @@ Prioridade: alta
 Local: exercicio10/Main.lerLinha / tutorial — JogoService.lerLinha
 Princípio relacionado: — (robustez)
 Observação: fim de entrada (Ctrl+D) causa NoSuchElementException em ambos.
+Impacto para manutenção, testes ou evolução: o jogo termina com erro em vez de sair
+  normalmente, e testes com entrada roteirizada quebram se o roteiro for mais curto.
 Proposta: Terminal.lerLinha devolve Optional; fim de entrada aborta a partida e sai do
   menu normalmente. — RESOLVIDO (evidência 07)
 Prioridade: média
@@ -262,6 +264,8 @@ Local: exercicio10/Main.parseRankingJson
 Princípio relacionado: SRP (formato separado do acesso a disco)
 Observação: o parser divide o texto por vírgulas; um piloto chamado "Silva, J." perde o
   registro ao recarregar. Um arquivo corrompido é sobrescrito sem aviso.
+Impacto para manutenção, testes ou evolução: perda silenciosa de dados do ranking, que é
+  justamente a parte persistente do jogo.
 Proposta: RankingJson com leitor que respeita aspas e escapes; gravação atômica
   (temporário + move) e cópia .corrompido. — RESOLVIDO
 Prioridade: média
@@ -272,6 +276,8 @@ Local: repository/JsonRankingRepository.salvar
 Princípio relacionado: SRP
 Observação: o arquivo guarda todas as vitórias que entraram no Top 5 no momento em que
   foram jogadas; o corte em 5 é feito só na leitura, então o arquivo cresce aos poucos.
+Impacto para manutenção, testes ou evolução: desprezível no uso real (uma linha por
+  vitória que entra no Top 5), mas o arquivo deixa de refletir exatamente o que é exibido.
 Proposta: o serviço poder pedir ao repositório para manter só os N melhores
   (ex.: método manterMelhores(int)), ou aceitar o crescimento, que é insignificante aqui.
   — PENDENTE
@@ -283,6 +289,8 @@ Local: projeto (build e testes)
 Princípio relacionado: —
 Observação: sem Maven/Gradle, os testes usam um mini-framework próprio (Verifica) e o JSON
   usa um parser próprio.
+Impacto para manutenção, testes ou evolução: mais código próprio para manter; sem
+  relatório de cobertura nem integração com IDE/CI que o JUnit oferece.
 Proposta: numa próxima versão, adotar Maven + JUnit 5 e uma biblioteca JSON (Gson). Mantive
   sem dependências porque a disciplina pede compilação direta com javac. — PENDENTE
 Prioridade: média
@@ -300,18 +308,20 @@ Prioridade: média
 
 ## Decisões com as quais não concordo (e o que fiz)
 
-| # | Decisão do tutorial | Por que discordo | O que fiz |
-|---|---|---|---|
-| 1 | Ranking gravado como texto `nome\|pontos\|...` | A atividade anterior exigia `ranking.json`; o formato de texto quebra se o nome tiver `\|` e não lê o arquivo do exercício 10. A refatoração deveria preservar o comportamento. | JSON com as mesmas chaves do original |
-| 2 | `JogoService` com `Scanner`, `System.out` e menu | É a mesma mistura da `Main` original, apenas com outro nome; impede testar as regras. | `Partida` + `JogoService` + `JogoConsole` |
-| 3 | Pontuações Professor 15, Engenheiro 20, Astronauta 10 | Altera a regra do jogo sem justificativa (original: 10/15/20). Uma refatoração não deve mudar comportamento. | Mantive 10/15/20, com teste |
-| 4 | `moverInimigos` com `Math.random()`, diagonais e sem limites | Inimigos saem do mapa e somem; o movimento não é reproduzível em teste. | Movimento em 4 direções, limitado pelo `Mapa`, com `Random` injetado (teste de 10.000 turnos) |
-| 5 | Reset do ranking sem confirmação | Regressão em relação ao original, que pedia (s/n). | Confirmação mantida |
-| 6 | Implementação chamada `RankingService` no pacote `repository` | O nome sugere camada de serviço e confunde com `JogoService`. | `JsonRankingRepository` |
-| 7 | `EntidadeMapa` com `x`/`y` `protected` | Qualquer subclasse altera a posição livremente (encapsulamento fraco). | Campos `private` + `protected deslocar()` |
-| 8 | Capacidade da nave = quantidade de passageiros da dificuldade; Difícil com 6 passageiros | Muda duas regras do original (capacidade fixa 5; Difícil com 5). | Capacidade 5 e quantidades do original, centralizadas no enum |
-| 9 | Eixo Y invertido (`w` soma 1 e o mapa é desenhado de cima para baixo a partir de `maxY`) | É coerente, mas muda as coordenadas mostradas ao jogador em relação ao original sem ganho. | Mantive o eixo original (`w` diminui Y) |
-| 10 | `MapaRenderer` com sobrecargas que fixam o mapa em -2..2 e `Nave.getSimbolo()` = `'N'` enquanto a tela desenha `'@'` | Código que não é usado ou que contradiz o comportamento real. | Um único `desenhar`, e o símbolo vem sempre da entidade |
+Todas foram corrigidas na minha versão; a prioridade indica o quanto cada ponto afetava o jogo (alta = mudava comportamento ou impedia testes).
+
+| # | Decisão do tutorial | Por que discordo | O que fiz | Prioridade |
+|---|---|---|---|---|
+| 1 | Ranking gravado como texto `nome\|pontos\|...` | A atividade anterior exigia `ranking.json`; o formato de texto quebra se o nome tiver `\|` e não lê o arquivo do exercício 10. A refatoração deveria preservar o comportamento. | JSON com as mesmas chaves do original | alta |
+| 2 | `JogoService` com `Scanner`, `System.out` e menu | É a mesma mistura da `Main` original, apenas com outro nome; impede testar as regras. | `Partida` + `JogoService` + `JogoConsole` | alta |
+| 3 | Pontuações Professor 15, Engenheiro 20, Astronauta 10 | Altera a regra do jogo sem justificativa (original: 10/15/20). Uma refatoração não deve mudar comportamento. | Mantive 10/15/20, com teste | alta |
+| 4 | `moverInimigos` com `Math.random()`, diagonais e sem limites | Inimigos saem do mapa e somem; o movimento não é reproduzível em teste. | Movimento em 4 direções, limitado pelo `Mapa`, com `Random` injetado (teste de 10.000 turnos) | média |
+| 5 | Reset do ranking sem confirmação | Regressão em relação ao original, que pedia (s/n). | Confirmação mantida | média |
+| 6 | Implementação chamada `RankingService` no pacote `repository` | O nome sugere camada de serviço e confunde com `JogoService`. | `JsonRankingRepository` | baixa |
+| 7 | `EntidadeMapa` com `x`/`y` `protected` | Qualquer subclasse altera a posição livremente (encapsulamento fraco). | Campos `private` + `protected deslocar()` | média |
+| 8 | Capacidade da nave = quantidade de passageiros da dificuldade; Difícil com 6 passageiros | Muda duas regras do original (capacidade fixa 5; Difícil com 5). | Capacidade 5 e quantidades do original, centralizadas no enum | média |
+| 9 | Eixo Y invertido (`w` soma 1 e o mapa é desenhado de cima para baixo a partir de `maxY`) | É coerente, mas muda as coordenadas mostradas ao jogador em relação ao original sem ganho. | Mantive o eixo original (`w` diminui Y) | baixa |
+| 10 | `MapaRenderer` com sobrecargas que fixam o mapa em -2..2 e `Nave.getSimbolo()` = `'N'` enquanto a tela desenha `'@'` | Código que não é usado ou que contradiz o comportamento real. | Um único `desenhar`, e o símbolo vem sempre da entidade | baixa |
 
 ### A arquitetura está adequada ao tamanho do projeto?
 
