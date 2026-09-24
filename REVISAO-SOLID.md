@@ -1,14 +1,22 @@
 # Revisão SOLID — Missão Marte Unifor
 
-**Nome:** Igor Damasceno Andrade — matrícula 2113413
-**Data:** 22/09/2026
-**Escopo:** código inicial `src/exercicio10`, solução de referência do tutorial (`src/README.md`) e minha versão em `src/solidexercicio10`.
+**Equipe:**
 
-Cada observação indica se foi **resolvida** na minha versão ou se continua **pendente** (melhoria para uma próxima versão). A prioridade considera o impacto no jogo e o custo de fazer a mudança.
+| Integrante | Matrícula |
+|---|---|
+| Igor Damasceno Andrade | 2113413 |
+| Anderson Silveiro de Oliveira | 2517361 |
+| Asafe Campos Damasceno | 2510525 |
+
+**Data:** 22/09/2026
+
+**Escopo:** código inicial `src/exercicio10`, solução de referência do tutorial (`src/README.md`) e a nossa versão em `src/solidexercicio10`.
+
+Cada observação indica se foi **resolvida** na nossa versão ou se continua **pendente** (melhoria para uma próxima versão). A prioridade considera o impacto no jogo e o custo de fazer a mudança.
 
 ---
 
-## Como validei a solução
+## Como validamos a solução
 
 - [x] compilação do código inicial — `javac -encoding UTF-8 -d out src/exercicio10/*.java` (sem erros)
 - [x] compilação da versão refatorada — `javac -encoding UTF-8 -Xlint:all -d out $(find src/solidexercicio10 -name "*.java")` (sem erros e sem avisos)
@@ -48,7 +56,7 @@ Observação: o JogoService do tutorial ainda contém o menu, o Scanner, todos o
 Impacto para manutenção, testes ou evolução: para testar "embarcar soma 20 pontos" é
   preciso digitar um roteiro inteiro no Scanner; trocar o console por uma interface
   gráfica exigiria reescrever o serviço.
-Proposta: separei em três classes: Partida (regras de um turno, recebe Comando e devolve
+Proposta: separamos em três classes: Partida (regras de um turno, recebe Comando e devolve
   ResultadoTurno com eventos), JogoService (casos de uso e ranking, sem console) e
   JogoConsole (menu e interação). Os testes de regra agora rodam sem console. — RESOLVIDO
 Prioridade: alta
@@ -61,7 +69,7 @@ Observação: ainda reúne dois fluxos: o menu principal e o laço da partida (i
   leitura do tamanho do mapa). É a maior classe de apresentação (≈155 linhas).
 Impacto para manutenção, testes ou evolução: baixo hoje; se o menu ganhar mais opções
   (configurações, créditos) a classe tende a crescer.
-Proposta: extrair um ControladorPartida quando surgir a próxima opção de menu. Não fiz
+Proposta: extrair um ControladorPartida quando surgir a próxima opção de menu. Não fizemos
   agora porque o ganho seria pequeno e criaria mais um arquivo sem problema concreto. — PENDENTE
 Prioridade: baixa
 ```
@@ -129,7 +137,7 @@ Impacto para manutenção, testes ou evolução: uma subclasse nova que esqueces
   sobrescrever getPontuacao() valeria 10 silenciosamente.
 Proposta: Passageiro abstrata com getTipo(), getPontuacao() e getSimbolo() abstratos e o
   contrato documentado (pontuação positiva e fixa). O compilador obriga a implementação.
-  — RESOLVIDO (concordo com o tutorial neste ponto)
+  — RESOLVIDO (concordamos com o tutorial neste ponto)
 Prioridade: média
 ```
 
@@ -155,7 +163,7 @@ Observação: o contrato de Movel não garante que a entidade continue dentro do
 Impacto para manutenção, testes ou evolução: o contrato é mais fraco do que o esperado
   pelo jogo; hoje só a Missao chama mover, então não há defeito, mas nada impede.
 Proposta: tornar mover visível só para o pacote model (a Missao está no mesmo pacote) ou
-  fazer Movel receber o Mapa. Não mudei porque a interface pública Movel faz parte do
+  fazer Movel receber o Mapa. Não mudamos porque a interface pública Movel faz parte do
   diagrama pedido. — PENDENTE
 Prioridade: média
 ```
@@ -185,7 +193,7 @@ Observação: a separação faz sentido: Asteroide, Passageiro e PlataformaPouso
 Impacto para manutenção, testes ou evolução: evita que um asteroide seja obrigado a ter
   um mover() vazio ou que lance exceção (o que também violaria LSP).
 Proposta: manter. Ressalva honesta: com apenas duas classes móveis, o ganho é pequeno;
-  a interface se paga se surgirem novos móveis (ex.: um passageiro que foge). — CONCORDO
+  a interface se paga se surgirem novos móveis (ex.: um passageiro que foge). — CONCORDAMOS
 Prioridade: baixa
 ```
 
@@ -199,7 +207,7 @@ Observação: o serviço recebe o contrato pelo construtor e não importa
 Impacto para manutenção, testes ou evolução: trocar o arquivo por banco de dados ou
   memória é criar uma classe e mudar uma linha no Main. O teste "DIP: mesmo serviço
   funciona com repositório em memória e em JSON" executa o mesmo cenário com as duas.
-Proposta: manter. — CONCORDO (decisão do tutorial)
+Proposta: manter. — CONCORDAMOS (decisão do tutorial)
 Prioridade: alta
 ```
 
@@ -226,7 +234,7 @@ Observação: a apresentação ainda importa dois tipos do pacote de persistênc
 Impacto para manutenção, testes ou evolução: se o repositório mudar o formato do
   registro, a tela precisa mudar junto.
 Proposta: o JogoService devolver um DTO próprio (ex.: service.PosicaoRanking) e traduzir a
-  exceção. Não fiz agora porque o RankingEntry já é imutável e simples; a mudança
+  exceção. Não fizemos agora porque o RankingEntry já é imutável e simples; a mudança
   dobraria as classes de ranking sem benefício imediato. — PENDENTE
 Prioridade: baixa
 ```
@@ -291,7 +299,7 @@ Observação: sem Maven/Gradle, os testes usam um mini-framework próprio (Verif
   usa um parser próprio.
 Impacto para manutenção, testes ou evolução: mais código próprio para manter; sem
   relatório de cobertura nem integração com IDE/CI que o JUnit oferece.
-Proposta: numa próxima versão, adotar Maven + JUnit 5 e uma biblioteca JSON (Gson). Mantive
+Proposta: numa próxima versão, adotar Maven + JUnit 5 e uma biblioteca JSON (Gson). Mantivemos
   sem dependências porque a disciplina pede compilação direta com javac. — PENDENTE
 Prioridade: média
 ```
@@ -304,32 +312,32 @@ Prioridade: média
 2. **`RankingRepository` como abstração (Passo 4).** Benefício comprovado por teste: o mesmo `JogoService` roda com JSON e com memória. É a decisão que mais ajuda a testar.
 3. **`Passageiro` abstrato e hierarquia `EntidadeMapa` (Passo 5).** Tira o "passageiro genérico" e faz o compilador cobrar pontuação e símbolo de cada tipo novo.
 4. **Separar `Posicionavel` de `Movel`.** Evita métodos vazios em entidades fixas (com a ressalva de tamanho registrada acima).
-5. **Pacotes `model / service / presentation / repository`.** Mantive a estrutura sugerida porque ela deixa as dependências apontarem para o `model`, que ficou sem nenhuma dependência.
+5. **Pacotes `model / service / presentation / repository`.** Mantivemos a estrutura sugerida porque ela deixa as dependências apontarem para o `model`, que ficou sem nenhuma dependência.
 
-## Decisões com as quais não concordo (e o que fiz)
+## Decisões com as quais não concordo (e o que fizemos)
 
-Todas foram corrigidas na minha versão; a prioridade indica o quanto cada ponto afetava o jogo (alta = mudava comportamento ou impedia testes).
+Todas foram corrigidas na nossa versão; a prioridade indica o quanto cada ponto afetava o jogo (alta = mudava comportamento ou impedia testes).
 
-| # | Decisão do tutorial | Por que discordo | O que fiz | Prioridade |
+| # | Decisão do tutorial | Por que discordamos | O que fizemos | Prioridade |
 |---|---|---|---|---|
 | 1 | Ranking gravado como texto `nome\|pontos\|...` | A atividade anterior exigia `ranking.json`; o formato de texto quebra se o nome tiver `\|` e não lê o arquivo do exercício 10. A refatoração deveria preservar o comportamento. | JSON com as mesmas chaves do original | alta |
 | 2 | `JogoService` com `Scanner`, `System.out` e menu | É a mesma mistura da `Main` original, apenas com outro nome; impede testar as regras. | `Partida` + `JogoService` + `JogoConsole` | alta |
-| 3 | Pontuações Professor 15, Engenheiro 20, Astronauta 10 | Altera a regra do jogo sem justificativa (original: 10/15/20). Uma refatoração não deve mudar comportamento. | Mantive 10/15/20, com teste | alta |
+| 3 | Pontuações Professor 15, Engenheiro 20, Astronauta 10 | Altera a regra do jogo sem justificativa (original: 10/15/20). Uma refatoração não deve mudar comportamento. | Mantivemos 10/15/20, com teste | alta |
 | 4 | `moverInimigos` com `Math.random()`, diagonais e sem limites | Inimigos saem do mapa e somem; o movimento não é reproduzível em teste. | Movimento em 4 direções, limitado pelo `Mapa`, com `Random` injetado (teste de 10.000 turnos) | média |
 | 5 | Reset do ranking sem confirmação | Regressão em relação ao original, que pedia (s/n). | Confirmação mantida | média |
 | 6 | Implementação chamada `RankingService` no pacote `repository` | O nome sugere camada de serviço e confunde com `JogoService`. | `JsonRankingRepository` | baixa |
 | 7 | `EntidadeMapa` com `x`/`y` `protected` | Qualquer subclasse altera a posição livremente (encapsulamento fraco). | Campos `private` + `protected deslocar()` | média |
 | 8 | Capacidade da nave = quantidade de passageiros da dificuldade; Difícil com 6 passageiros | Muda duas regras do original (capacidade fixa 5; Difícil com 5). | Capacidade 5 e quantidades do original, centralizadas no enum | média |
-| 9 | Eixo Y invertido (`w` soma 1 e o mapa é desenhado de cima para baixo a partir de `maxY`) | É coerente, mas muda as coordenadas mostradas ao jogador em relação ao original sem ganho. | Mantive o eixo original (`w` diminui Y) | baixa |
+| 9 | Eixo Y invertido (`w` soma 1 e o mapa é desenhado de cima para baixo a partir de `maxY`) | É coerente, mas muda as coordenadas mostradas ao jogador em relação ao original sem ganho. | Mantivemos o eixo original (`w` diminui Y) | baixa |
 | 10 | `MapaRenderer` com sobrecargas que fixam o mapa em -2..2 e `Nave.getSimbolo()` = `'N'` enquanto a tela desenha `'@'` | Código que não é usado ou que contradiz o comportamento real. | Um único `desenhar`, e o símbolo vem sempre da entidade | baixa |
 
 ### A arquitetura está adequada ao tamanho do projeto?
 
-Passei de 10 para 34 arquivos. Reavaliando cada abstração que **eu** acrescentei:
+Passamos de 10 para 34 arquivos. Reavaliando cada abstração que **nós** acrescentamos:
 
 - **Justificadas por um problema concreto:** `Mapa` (removeu quatro parâmetros repetidos em seis métodos), `FabricaPassageiro` (OCP comprovado por teste), `Terminal` (corrigiu a exceção de fim de entrada), `RankingJson` (corrigiu o parser), `Partida` + `ResultadoTurno` + `EventoTurno` (permitiram 8 testes de regra sem console).
-- **Discutíveis:** `EstadoPartida` e `EventoTurno` se sobrepõem em parte (`MISSAO_CUMPRIDA` ↔ `VITORIA`); poderiam virar um só enum. `PlataformaPouso` como classe poderia ser uma constante; mantive porque eliminou a coordenada (0,0) repetida em dois lugares e permite desenhar tudo pelo mesmo `getSimbolo()`.
-- **Não criei**, de propósito: interface para `MapaRenderer`, interface para `Terminal` e interface para `GeradorMissao`. Hoje existe uma única implementação de cada e os testes conseguem usá-las diretamente (injetando `Scanner` e `PrintStream`); criar a interface seria abstração sem problema a resolver.
+- **Discutíveis:** `EstadoPartida` e `EventoTurno` se sobrepõem em parte (`MISSAO_CUMPRIDA` ↔ `VITORIA`); poderiam virar um só enum. `PlataformaPouso` como classe poderia ser uma constante; mantivemos porque eliminou a coordenada (0,0) repetida em dois lugares e permite desenhar tudo pelo mesmo `getSimbolo()`.
+- **Não criamos**, de propósito: interface para `MapaRenderer`, interface para `Terminal` e interface para `GeradorMissao`. Hoje existe uma única implementação de cada e os testes conseguem usá-las diretamente (injetando `Scanner` e `PrintStream`); criar a interface seria abstração sem problema a resolver.
 
 Conclusão: para um jogo de console deste tamanho, a divisão em quatro pacotes é adequada; a granularidade dentro de `service` está no limite do razoável.
 
@@ -339,7 +347,7 @@ Conclusão: para um jogo de console deste tamanho, a divisão em quatro pacotes 
 
 ### Automatizados — `java -cp out solidexercicio10.ExecutarTestes`
 
-**Resultado: 39 testes, 39 sucessos, 0 falhas** ([saída](docs/evidencias/08-testes-automatizados.txt)). Para confirmar que os testes realmente detectam erros, alterei temporariamente a pontuação do Astronauta para 10 e removi a checagem de limites da `Missao`: 9 testes falharam, como esperado.
+**Resultado: 39 testes, 39 sucessos, 0 falhas** ([saída](docs/evidencias/08-testes-automatizados.txt)). Para confirmar que os testes realmente detectam erros, alteramos temporariamente a pontuação do Astronauta para 10 e removemos a checagem de limites da `Missao`: 9 testes falharam, como esperado.
 
 | Grupo | Qtd. | O que verifica |
 |---|---|---|
@@ -400,6 +408,6 @@ O console apenas traduz a tecla (`'c'` → `Comando.EMBARCAR`) e escolhe o texto
 - **O que seria necessário para trocar o arquivo por banco de dados ou memória?** Criar uma classe que implemente `RankingRepository` e alterar uma linha no `Main`. Já existe `RankingEmMemoria` e o teste de DIP prova que o serviço não muda.
 - **Como adicionar um novo tipo de passageiro sem modificar a lógica principal?** Criar a subclasse de `Passageiro` (tipo, pontuação, símbolo) e registrar `(x, y) -> new Medico(...)` na lista do `Main`. Mapa, legenda, embarque e pontuação funcionam sem alteração (teste `Medico`).
 - **As subclasses de `Passageiro` respeitam o contrato?** Sim: nenhuma lança exceção, todas devolvem pontuação positiva fixa, tipo e símbolo próprios, e o código cliente nunca usa `instanceof`.
-- **Alguma interface tem métodos que seus clientes não usam?** Na minha versão, não. No tutorial, `RankingRepository.salvar(nome, pontuacao)` não era usado e foi removido.
-- **A arquitetura está adequada ao tamanho do projeto?** Em geral sim; a seção acima aponta onde ela está no limite (`EstadoPartida`/`EventoTurno`) e as abstrações que deixei de criar de propósito.
-- **Qual melhoria eu implementaria primeiro?** Restringir `Movel.mover` ao pacote `model` (prioridade média, contrato de LSP mais forte); depois, adotar Maven + JUnit.
+- **Alguma interface tem métodos que seus clientes não usam?** Na nossa versão, não. No tutorial, `RankingRepository.salvar(nome, pontuacao)` não era usado e foi removido.
+- **A arquitetura está adequada ao tamanho do projeto?** Em geral sim; a seção acima aponta onde ela está no limite (`EstadoPartida`/`EventoTurno`) e as abstrações que deixamos de criar de propósito.
+- **Qual melhoria implementaríamos primeiro?** Restringir `Movel.mover` ao pacote `model` (prioridade média, contrato de LSP mais forte); depois, adotar Maven + JUnit.

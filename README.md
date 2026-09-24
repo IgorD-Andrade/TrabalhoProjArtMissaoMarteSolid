@@ -1,7 +1,15 @@
 # Missão Marte Unifor — Refatoração SOLID
 
-**Aluno:** Igor Damasceno Andrade — matrícula 2113413
+**Equipe:**
+
+| Integrante | Matrícula |
+|---|---|
+| Igor Damasceno Andrade | 2113413 |
+| Anderson Silveiro de Oliveira | 2517361 |
+| Asafe Campos Damasceno | 2510525 |
+
 **Disciplina:** Projeto e Arquitetura de Sistemas — UNIFOR
+
 **Repositório:** https://github.com/IgorD-Andrade/missao-marte-solid-igor
 
 Refatoração do jogo de console *Missão Marte Unifor* (`src/exercicio10`) aplicando os princípios SOLID. O código original foi **preservado sem alterações** para comparação; a versão refatorada está em `src/solidexercicio10`.
@@ -138,9 +146,9 @@ Menu, textos, símbolos, pontuações (10/15/20), pontuação inicial por dificu
 | Arquivo de ranking corrompido | sobrescrito sem aviso | preservado como `.corrompido` |
 | Estatísticas | só na vitória | ao fim de qualquer partida (com o resultado) |
 
-### Onde divergi do tutorial
+### Onde divergimos do tutorial
 
-O tutorial foi seguido na estrutura de pacotes, mas a implementação de referência tinha pontos que eu corrigi ou fiz diferente — todos justificados em [`REVISAO-SOLID.md`](REVISAO-SOLID.md): pontuações de Professor/Engenheiro/Astronauta estavam trocadas; o ranking era gravado em texto separado por `|` em vez de JSON; inimigos podiam sair do mapa; o `JogoService` misturava `Scanner`/`System.out` com regras; o reset não pedia confirmação; a interface do repositório tinha um método que ninguém usava; e a implementação se chamava `RankingService` estando no pacote `repository`.
+O tutorial foi seguido na estrutura de pacotes, mas a implementação de referência tinha pontos que corrigimos ou fizemos diferente — todos justificados em [`REVISAO-SOLID.md`](REVISAO-SOLID.md): pontuações de Professor/Engenheiro/Astronauta estavam trocadas; o ranking era gravado em texto separado por `|` em vez de JSON; inimigos podiam sair do mapa; o `JogoService` misturava `Scanner`/`System.out` com regras; o reset não pedia confirmação; a interface do repositório tinha um método que ninguém usava; e a implementação se chamava `RankingService` estando no pacote `repository`.
 
 ---
 
