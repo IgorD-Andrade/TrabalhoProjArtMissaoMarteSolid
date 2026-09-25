@@ -4,9 +4,8 @@ import java.io.PrintStream;
 import java.util.Optional;
 import java.util.Scanner;
 
-/**
+/*
  * Leitura de linhas do usuário.
- *
  * <p>Recebe {@code Scanner} e {@code PrintStream} prontos, então os testes podem
  * simular um jogador com uma {@code String}. Retorna {@code Optional.empty()}
  * quando a entrada termina (Ctrl+D), situação em que o original lançava
