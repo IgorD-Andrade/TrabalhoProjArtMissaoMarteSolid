@@ -39,6 +39,7 @@ public class Nave extends EntidadeMapa implements Movel {
 
     public int getCapacidade() {
         return capacidade;
+    
     }
 
     public int getVidas() {
@@ -57,7 +58,7 @@ public class Nave extends EntidadeMapa implements Movel {
         return passageiros.size() >= capacidade;
     }
 
-    /** @return {@code false} quando a nave está cheia. */
+   
     public boolean embarcar(Passageiro passageiro) {
         if (estaCheia()) {
             return false;
