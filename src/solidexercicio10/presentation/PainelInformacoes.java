@@ -9,10 +9,10 @@ import solidexercicio10.service.EventoTurno;
 import solidexercicio10.service.Partida;
 import solidexercicio10.service.ResultadoTurno;
 
-/**
+/*
  * Textos exibidos ao jogador: menu, painel da nave, mensagens de turno,
  * estatísticas e ranking.
- *
+ 
  * <p>SRP: separado de {@link MapaRenderer} porque o mapa muda por motivos
  * visuais (símbolos, grade) e estes textos mudam por motivos de comunicação
  * (idioma, redação).</p>
