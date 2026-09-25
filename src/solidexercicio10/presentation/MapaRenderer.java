@@ -13,8 +13,6 @@ import solidexercicio10.model.Passageiro;
 /**
  * Desenha o mapa da missão no console.
  *
- * <p>SRP: só apresenta; não altera a missão nem calcula pontos.</p>
- *
  * <p>OCP: o símbolo vem de {@link EntidadeMapa#getSimbolo()} e a legenda é
  * montada a partir das entidades presentes. Um novo tipo de passageiro aparece
  * no mapa e na legenda sem nenhuma alteração nesta classe (no original e no
