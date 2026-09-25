@@ -17,7 +17,7 @@ import solidexercicio10.service.ResultadoTurno;
  *
  * <p>SRP: traduz o que o jogador digita em chamadas ao {@link JogoService} e à
  * {@link Partida}, e delega a exibição para {@link MapaRenderer} e
- * {@link PainelInformacoes}. Não contém regra de pontuação, vidas ou vitória.</p>
+ 
  */
 public class JogoConsole {
     static final int TAMANHO_PADRAO = 5;
