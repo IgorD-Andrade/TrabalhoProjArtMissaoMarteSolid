@@ -1,6 +1,6 @@
 package solidexercicio10.model;
 
-/** Obstáculo que se move uma casa por turno. Colidir com ele custa uma vida. */
+/** Obstáculo que se move uma casa por turno. Cor com ele custa uma vida. */
 public class Inimigo extends EntidadeMapa implements Movel {
     public Inimigo(int x, int y) {
         super(x, y);
