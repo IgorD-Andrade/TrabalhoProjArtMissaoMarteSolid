@@ -1,15 +1,6 @@
 package solidexercicio10.model;
 
-/**
- * Passageiro a ser resgatado.
- *
- * <p>Contrato (LSP): toda subclasse deve devolver uma pontuação positiva e fixa,
- * um tipo não vazio e um símbolo próprio. Quem recebe um {@code Passageiro}
- * (a partida, o renderizador) nunca precisa saber a classe concreta.</p>
- *
- * <p>A classe é abstrata porque "passageiro genérico" não existe no domínio;
- * no original ela era concreta e tinha pontuação default.</p>
- */
+
 public abstract class Passageiro extends EntidadeMapa {
     private final String nome;
 
