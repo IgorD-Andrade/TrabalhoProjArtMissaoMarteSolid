@@ -1,11 +1,5 @@
 package solidexercicio10.model;
 
-/**
- * Algo que ocupa uma coordenada no mapa.
- *
- * <p>ISP: contrato mínimo, usado por quem só precisa consultar posição
- * (renderização, colisão, embarque). Quem precisa mover depende de {@link Movel}.</p>
- */
 public interface Posicionavel {
     int getX();
 
