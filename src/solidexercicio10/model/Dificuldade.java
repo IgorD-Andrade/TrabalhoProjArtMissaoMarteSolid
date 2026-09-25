@@ -10,7 +10,7 @@ import java.text.Normalizer;
  * próprios valores; criar uma nova dificuldade é adicionar uma linha.</p>
  */
 public enum Dificuldade {
-    //      rótulo    pontos  passageiros  asteroides  inimigos
+    
     FACIL("Fácil", 30, 4, 1, 1),
     MEDIO("Médio", 20, 5, 2, 2),
     DIFICIL("Difícil", 15, 5, 3, 3);
@@ -63,7 +63,7 @@ public enum Dificuldade {
         return tamanho;
     }
 
-    /** Converte texto digitado (com ou sem acento, maiúsculo ou não). Inválido vira MEDIO. */
+   
     public static Dificuldade deString(String valor) {
         if (valor == null) {
             return MEDIO;
